@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'home' => 'pages#home'
   get 'about' => 'pages#about'
 
+  resource :catalogue, only: :show do
+    resources :categories, only: :show
+  end
+
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
