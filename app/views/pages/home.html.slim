@@ -1,0 +1,8 @@
+.container
+  .row
+    - Category.all.each do |category|
+      .col-md-4
+        h2 = category.title
+        p = category.description
+        p
+          = link_to 'View details »', catalogue_category_path(category), class: 'btn btn-default'
