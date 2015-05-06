@@ -1,0 +1,26 @@
+nav.navbar.navbar-inverse.navbar-static-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href=home_path() Reading for plesure
+
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a href=catalogue_path() Catalogue
+        li
+          a href=search_path() Search
+        li
+          a href=about_path() About
+
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href="#" Sign in
+        li
+          a href="#" Wish list
+        li
+          a href="#" Cart
