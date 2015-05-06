@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :categories, only: :show
   end
 
+  get 'search' => 'search#index'
+
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
