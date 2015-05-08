@@ -11,3 +11,4 @@ if [[ "$RUBY_VERSION" == "1.8" ]]; then
 fi
 
 gem install bundler -v 1.9.6
+gem install rack -v 1.6.0
