@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  authorize_resource :pages, class: false
+
   def home
   end
 

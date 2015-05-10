@@ -1,5 +1,5 @@
 class SearchCell < Cell::Rails
-  def index
+  def show
     render
   end
 end

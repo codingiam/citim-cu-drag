@@ -26,6 +26,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '~> 2.0'
+  gem 'awesome_print', '~> 1.6.1'
 end
 
 # Add support for the MySQL
@@ -66,6 +67,10 @@ gem 'spring', group: :development
 gem 'cells', '~> 3.11.3'
 
 gem 'annotate', '~> 2.6.8'
+
+gem 'devise'
+
+gem 'cancancan', '~> 1.10'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

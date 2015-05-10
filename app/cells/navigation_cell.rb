@@ -1,5 +1,9 @@
 class NavigationCell < Cell::Rails
-  def index
+  include Devise::Controllers::Helpers
+
+  helper_method :user_signed_in?
+
+  def show
     render
   end
 end

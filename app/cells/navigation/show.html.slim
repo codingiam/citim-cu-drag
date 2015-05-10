@@ -6,7 +6,7 @@ nav.navbar.navbar-inverse.navbar-static-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href=home_path() Reading for plesure
+      a.navbar-brand href=home_path() = t("title")
 
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
@@ -18,8 +18,12 @@ nav.navbar.navbar-inverse.navbar-static-top
           a href=about_path() About
 
       ul.nav.navbar-nav.navbar-right
-        li
-          a href="#" Sign in
+        - unless user_signed_in?
+          li
+            a href=new_user_session_path() Sign in
+        - else
+          li
+            a href=destroy_user_session_path() data-method="delete" Sign out
         li
           a href="#" Wish list
         li

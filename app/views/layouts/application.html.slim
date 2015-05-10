@@ -24,11 +24,15 @@ html class='no-js' lang=I18n.locale
 
     == csrf_meta_tags
   body
-    == render_cell :navigation, :index
+    == render_cell :navigation, :show
 
-    == render_cell :search, :index
+    == render_cell :search, :show
 
-    == yield
+    .container
+      == cell :alert, collection: flash
+
+    .container
+      == yield
 
     == javascript_include_tag 'application'
 
