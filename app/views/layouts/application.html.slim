@@ -8,11 +8,11 @@ html class='no-js' lang=I18n.locale
   head
     meta charset='utf-8'
     meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'
+    meta name='viewport' content='width=device-width, initial-scale=1'
 
     title=t('title')
 
     meta name='description' content=t('description')
-    meta name='viewport' content='width=device-width, initial-scale=1'
     meta name='keywords' content=t('keywords')
     meta name='author' content='Doru Budai'
 
@@ -24,8 +24,15 @@ html class='no-js' lang=I18n.locale
 
     == csrf_meta_tags
   body
+    == render_cell :navigation, :show
+
+    == render_cell :search, :show
+
     .container
-      = yield
+      == cell :alert, collection: flash
+
+    .container
+      == yield
 
     == javascript_include_tag 'application'
 
