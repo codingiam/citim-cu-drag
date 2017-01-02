@@ -15,7 +15,7 @@ gem 'rails', '~> 5.0.1'
 ### OpenShift Online changes:
 
 # Fix the conflict with the system 'rake':
-gem 'rake', '~> 10.4.2'
+gem 'rake', '~> 11.2.2'
 
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql
@@ -40,9 +40,9 @@ end
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 
-group :production, :postgresql do
-  gem 'pg'
-end
+#group :production, :postgresql do
+#  gem 'pg'
+#end
 
 ### / OpenShift changes
 
@@ -67,7 +67,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'coffee-rails', '~> 4.2'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

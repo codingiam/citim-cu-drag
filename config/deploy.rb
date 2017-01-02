@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.7.1"
 
-server '139.162.142.26', port: 80, roles: [:web, :app, :db], primary: true
+server '139.162.142.26', port: 22, user: "deploy", roles: [:web, :app, :db], primary: true
 
 set :application, "reading_for_pleasure"
 set :repo_url, "git@github.com:codingiam/reading_for_pleasure.git"
@@ -65,6 +65,10 @@ set :format,        :pretty
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, File.read('.ruby-version').strip
+
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
